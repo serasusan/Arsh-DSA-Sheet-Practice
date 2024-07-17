@@ -22,3 +22,17 @@ class Solution:
                 r += 1
 
         return maxP
+
+
+# Solution 2
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # start = prices[0]
+        maxP = 0
+        l = 0
+        for r in range(len(prices)):
+            if prices[r]>prices[l]:
+                maxP += prices[r]-prices[l]
+            l = r
+        return maxP
+    
